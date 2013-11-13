@@ -1,6 +1,6 @@
 #!/bin/bash -x
 LOG='/tmp/init.log'
-exec >> (tee $LOG) 2>&1
+exec > >(tee $LOG) 2>&1
 #curl -L https://www.opscode.com/chef/install.sh | sudo bash 
 wget  https://www.opscode.com/chef/install.sh -O /root/install.sh 
 source /root/install.sh 
