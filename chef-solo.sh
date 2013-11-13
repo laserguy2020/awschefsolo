@@ -1,8 +1,8 @@
 #!/bin/bash -x
 curl -L https://www.opscode.com/chef/install.sh | sudo bash
-apt-get update
-apt-get install git -y
-mkdir /var/chef/cookbooks
+#apt-get update
+#apt-get install git -y
+mkdir -p /var/chef/cookbooks
 cd /var/chef/cookbooks
 for i in build-essential openssl mysql ; do git clone https://github.com/opscode-cookbooks/${i}.git; done
 echo ' file_cache_path "/var/chef/cache"

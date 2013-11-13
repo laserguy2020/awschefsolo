@@ -1,7 +1,8 @@
 #cloud-config
-runcmd:
- - [wget, "https://raw.github.com/stamak/awschefsolo/master/chef-solo.sh", -O, /root/chef-solo.sh ]
- - [source, /root/chef-solo.sh]
-
 packages:
  - git
+
+runcmd:
+ - [ wget, "https://raw.github.com/stamak/awschefsolo/master/chef-solo.sh", -O, /root/chef-solo.sh ]
+ - [ bash, -xx, /root/chef-solo.sh ]
+
