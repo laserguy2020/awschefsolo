@@ -12,9 +12,9 @@ for i in build-essential openssl mysql ; do git clone https://github.com/opscode
 #cookbook_path "/var/chef/cookbooks"
 #json_attribs "/var/chef/node.json" ' > /var/chef/solo.rb
 cat << EOF >> /var/chef/solo.rb
-echo ' file_cache_path "/var/chef/cache"
+file_cache_path "/var/chef/cache"
 cookbook_path "/var/chef/cookbooks"
-json_attribs "/var/chef/node.json" ' > /var/chef/solo.rb
+json_attribs "/var/chef/node.json"
 EOF
 
 #echo ' {
