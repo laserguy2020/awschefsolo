@@ -1,13 +1,14 @@
 #!/bin/bash -x
 LOG='/tmp/init.log'
+exec >> (tee $LOG) 2>&1
 #curl -L https://www.opscode.com/chef/install.sh | sudo bash 
-wget  https://www.opscode.com/chef/install.sh -O /root/install.sh &>> $LOG
-source /root/install.sh  &>> $LOG
+wget  https://www.opscode.com/chef/install.sh -O /root/install.sh 
+source /root/install.sh 
 #apt-get update
 #apt-get install git -y
-mkdir -p /var/chef/cookbooks  &>> $LOG
+mkdir -p /var/chef/cookbooks  
 cd /var/chef/cookbooks 
-for i in build-essential openssl mysql ; do git clone https://github.com/opscode-cookbooks/${i}.git  &>> $LOG ; done
+for i in build-essential openssl mysql ; do git clone https://github.com/opscode-cookbooks/${i}.git ; done
 #echo ' file_cache_path "/var/chef/cache"
 #cookbook_path "/var/chef/cookbooks"
 #json_attribs "/var/chef/node.json" ' > /var/chef/solo.rb
@@ -37,4 +38,4 @@ cat << EOF >>/var/chef/node.json
 }
 EOF
 
-/usr/bin/chef-solo -c /var/chef/solo.rb &>> $LOG
+/usr/bin/chef-solo -c /var/chef/solo.rb 

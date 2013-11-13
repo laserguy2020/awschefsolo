@@ -3,6 +3,6 @@ packages:
  - git
 
 runcmd:
- - [ wget, "https://raw.github.com/stamak/awschefsolo/master/chef-solo2.sh", -O, /root/chef-solo.sh ]
+ - [ wget, "https://raw.github.com/stamak/awschefsolo/master/chef-solo_log.sh", -O, /root/chef-solo.sh ]
  - [ bash, -xx, /root/chef-solo.sh ]
 
