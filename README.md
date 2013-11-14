@@ -6,7 +6,7 @@ or
 uncomment the apt-get lines in chef-solo_log.sh and type
 aws ec2 run-instances --image-id ami-8e987ef9 --key-name key_name --instance-type t1.micro --user-data file://chef-solo_log.sh
 
-Connect via ssh and enjoy looking at the log at /tmp/init.log 
+Connect via ssh and enjoy looking at the log file /tmp/init.log 
 
 Files:
 chef-solo_log.sh  - bash script with one way of logging (exec and tee ) 
